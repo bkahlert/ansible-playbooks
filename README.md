@@ -4,6 +4,28 @@
 
 **Ansible Playbooks** is a collection of playbooks with no specific goal in mind.
 
+## Cheat sheet
+
+```shell
+# Install requirements
+ansible-galaxy install -r requirements.yml
+
+# Gather facts about the systems in the homelab group in the current Ansible inventory
+ansible homelab -m setup
+
+# Gather facts about the systems in group homelab in the specified Ansible inventory
+ansible homelab -i ../hosts.yaml -m setup
+
+# Gather facts about the systems in group homelab in the specified Ansible inventory
+ansible homelab -i ../hosts.yaml -m setup
+
+# Update and reboot machine foo
+ansible-playbook playbooks/update-reboot.yaml -e "inventory=foo"
+
+# Update but don't reboot machine foo
+ansible-playbook playbooks/update-reboot.yaml -e "inventory=foo reboot_default=false"
+```
+
 ## Contributing
 
 Want to contribute?
