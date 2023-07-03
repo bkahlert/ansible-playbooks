@@ -1,0 +1,9 @@
+---
+- hosts: '{{inventory}}'
+  gather_facts: no
+  max_fail_percentage: 0
+  serial: 1
+  become: yes
+  roles:
+    - ssh_port
+    - ryandaniels.server_update_reboot

@@ -18,12 +18,23 @@ ansible homelab -i ../hosts.yaml -m setup
 
 # Gather facts about the systems in group homelab in the specified Ansible inventory
 ansible homelab -i ../hosts.yaml -m setup
+```
 
+### Update & reboot
+
+```shell
 # Update and reboot machine foo
 ansible-playbook playbooks/update-reboot.yaml -e "inventory=foo"
 
 # Update but don't reboot machine foo
 ansible-playbook playbooks/update-reboot.yaml -e "inventory=foo reboot_default=false"
+```
+
+### Change SSH port
+
+```shell
+# Update the SSH of the specified machines to the value of `ansible_port`
+ansible-playbook playbooks/ssh-port.yaml -e "inventory=foo"
 ```
 
 ## Contributing
